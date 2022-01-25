@@ -1,1 +1,1 @@
-# rockpaperscissors
+Rock Paper Scissors project for Foundations path on The Odin Project - play the game against a computer, best of 5 games
