@@ -1,23 +1,15 @@
 
 game();
 
-// // Create function game()
+// Rock Paper Scissors game, player plays against a computer picking randomly
 function game() {
-    
-    // **
-
-    // Prompt user to input a string i.e. "Rock", "Paper" or "Scissors" - input should be case-insensitive
-    // Validate input for rock, paper or scissors
-        // While invalid, prompt user to input again
-    // Create variable playerSelection and assign string to this 
-    // console.log to ensure results are correct
 
     let playerScore = 0;
     let computerScore = 0;
 
-    // Play game 5x in total
     for (let i = 1; i < 6 ; i++) {
 
+        // Function to intake player's hand, case insensitive
         function playerPlay() {
             playerHand = prompt("Rock, paper, scissors?").toLowerCase();
 
@@ -28,10 +20,7 @@ function game() {
             return playerHand;    
         }
 
-        // Create variable computerSelection and assign it computerPlay()
-        // Create function computerPlay()
-            // Randomly return "Rock", "Paper" or "Scissors"
-            // console.log to ensure results are correct
+        // Function that randomly returns "Rock", "Paper" or "Scissors" i.e. computer's hand
         function computerPlay() {
             plays = ["rock", "paper", "scissors"];
             computerHand = plays[Math.floor(Math.random() * plays.length)];
@@ -42,19 +31,7 @@ function game() {
         let computerSelection = computerPlay();
         console.log(playerSelection, computerSelection);
 
-
-        // Create function playRound(playerSelection, computerSelection)
-            // While there is a tie i.e. playerSelection === computerSelection
-                // Prompt user to input a hand again, and have computer reselect its hand
-            // Determine whether playerSelection or computerSelection wins
-                // if rock vs scissors || scissors vs paper || paper vs rock => player wins
-                // if rock vs paper || paper vs scissors || scissors vs rock => player loses
-                // console.log to display results for the round
-            // Return string that declares if player wins or loses e.g. "You Lose! Paper beats Rock"
-        // Determine player and computer score
-            // if player > computer, player wins
-            // else player loses
-
+        // Function to play a round of Rock, Paper, Scissors between player's hand and computer's hand, winner scores 1
         function playRound (playerSelection, computerSelection) {
             while (playerSelection === computerSelection){
                 alert("You tied with the computer, please try again.");
@@ -84,8 +61,6 @@ function game() {
     }
 
     // Determine winner from highest score
-    // console.log to display winner at the end
-    // Return string that declares if player wins or loses overall
     let winner = "";
     if (playerScore > computerScore) {
         winner = "player";
