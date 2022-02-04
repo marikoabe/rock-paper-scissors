@@ -21,7 +21,7 @@ function game() {
     const rockButton = document.querySelector("#rock-button");
     const paperButton = document.querySelector("#paper-button");
     const scissorsButton = document.querySelector("#scissors-button");
-    
+
     rockButton.addEventListener("click", playerSelectionRock);
     paperButton.addEventListener("click", playerSelectionPaper);
     scissorsButton.addEventListener("click", playerSelectionScissors);
@@ -60,8 +60,24 @@ function game() {
         console.log(playerScore);
         console.log(computerScore);
 
+        displayScores();
+
         isWinner(playerScore, computerScore);
     };
+
+    // Function to display current scores
+    function displayScores() {
+        const pScores = document.querySelector(".p-scores");
+        // const pUpdatedScores = document.createElement("p");
+        // pUpdatedScores.classList.add("p-scores");
+        pScores.textContent = "Player: " + playerScore + "\r\n" + "Computer: " + computerScore;
+        pScores.setAttribute('style', 'white-space: pre;');
+        // pUpdatedScores.textContent = "Player: " + playerScore + "\r\n" + "Computer: " + computerScore;
+        // pScores.parentNode.replaceChild(pUpdatedScores, pScores);
+    }
+
+    // Function to display round results
+
 
     // Determine winner from highest score
     function isWinner (playerScore, computerScore) {
